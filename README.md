@@ -25,33 +25,41 @@ Um aplicativo web para ajudar pessoas a controlarem seus gastos de forma simples
 ### Clonando o Repositório
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/Bruno-Lafayette/CG-Web.git
 cd seu-repositorio
 ```
 ### Instalando Dependencias
 
+```bash
 npm install
 # ou
 yarn install
+```
 
 ### Executando Aplicação
 
+```bash
 npm run dev
 # ou
 yarn dev
+```
 
 A aplicação estará disponível em http://localhost:3000.
 
-Implantação
+### Implantação
+
 A aplicação será hospedada na Vercel. Você pode acessá-la em breve.
 
-Contribuição
+### Contribuição
+
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
 
-Licença
+### Licença
+
 Este projeto está licenciado sob a MIT License. Veja o arquivo LICENSE para mais detalhes.
 
-Contato
+### Contato
+
 Se você tiver perguntas ou sugestões, sinta-se à vontade para entrar em contato:
 
 Bruno Lafayette - brunolafayette@rocketmail.com
