@@ -11,6 +11,15 @@ export const fetchTransactions = async () => {
 
 // Função para criar nova transação
 export const createTransaction = async (transaction) => {
-    const response = await axios.post(API_URL, transaction);
-    return response.data;
+    if (!transaction.date) {
+        transaction.date = new Date().toISOString(); // Define a data atual se não estiver presente
+    }
+
+    try {
+        const response = await axios.post(API_URL, transaction);
+        console.log("Transação criada:", response.data);
+    } catch (error) {
+        console.error("Erro ao criar transação:", error);
+    }
 };
+

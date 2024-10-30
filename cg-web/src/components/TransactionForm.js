@@ -6,6 +6,7 @@ const TransactionForm = ({ onAddTransaction }) => {
     const [description, setDescription] = useState('');
     const [amount, setAmount] = useState('');
     const [type, setType] = useState('expense');
+    const [date, setDate] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -13,12 +14,16 @@ const TransactionForm = ({ onAddTransaction }) => {
             description,
             amount: parseFloat(amount),
             type,
+            date: date || new Date().toISOString(), // Usa a data atual se não for preenchida
         };
         const newTransaction = await createTransaction(transaction);
         onAddTransaction(newTransaction);
+
+        // Limpa os campos do formulário
         setDescription('');
         setAmount('');
         setType('expense');
+        setDate('');
     };
 
     return (
@@ -42,6 +47,11 @@ const TransactionForm = ({ onAddTransaction }) => {
                 <option value="income">Renda</option>
                 <option value="expense">Despesa</option>
             </select>
+            <input
+                type="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+            />
             <button type="submit">Adicionar</button>
         </form>
     );

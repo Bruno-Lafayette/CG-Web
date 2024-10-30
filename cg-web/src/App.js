@@ -1,22 +1,14 @@
 // src/App.js
-import React, { useState } from 'react';
+import React from 'react';
 import TransactionList from './components/TransactionList';
-import TransactionForm from './components/TransactionForm';
 
-function App() {
-    const [transactions, setTransactions] = useState([]);
-
-    const handleAddTransaction = (transaction) => {
-        setTransactions((prevTransactions) => [...prevTransactions, transaction]);
-    };
-
+const App = () => {
     return (
-        <div className="App">
+        <div>
             <h1>Gerenciador de Gastos</h1>
-            <TransactionForm onAddTransaction={handleAddTransaction} />
-            <TransactionList transactions={transactions} />
+            <TransactionList /> {/* Renderiza apenas o TransactionList */}
         </div>
     );
-}
+};
 
 export default App;
